@@ -1,0 +1,240 @@
+/*
+	CSS - Exscientia coding problem
+	Claire Marks
+	September 2020
+*/
+
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		border: 0;
+		font: inherit;
+		font-size: 100%;
+		margin: 0;
+		padding: 0;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+	    font-size: 0.8rem;
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+	
+	ol li {
+	    padding: 10px;
+	}
+	
+	
+/* Headings */
+
+    h1, h2, h3, h4, h5 h6 {
+        font-family: 'Roboto Slab', serif;
+    }
+
+    h1 {
+		font-size: 2rem;
+		line-height: 1.5;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+		padding-bottom: 20px;
+	}
+
+	h4 {
+		font-size: 0.8rem;
+	}
+
+	h5 {
+		font-size: 0.7rem;
+	}
+
+	h6 {
+		font-size: 0.6rem;
+	}
+	
+	.page-header {
+	    margin: 20px 0px;
+	    padding: 20px 40px;
+	    text-transform: uppercase;
+	    width: 55%;
+	}
+	
+/* Body + Layouts */
+
+    body {
+        background-image: url('images/bg.png');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: 225px;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .main-contents {
+        margin: auto;
+        width: 90%;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 40px;
+    }
+    
+    .grid-item {
+        height: 500px;
+        min-width: 450px;
+    }
+    
+    #label {
+        height: 25px;
+    }
+    
+    @media (max-width: 1000px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+            grid-row-gap: 80px;
+        }
+    }
+    
+/* Viewer */
+    
+    #viewer {
+        height: 450px;
+        width: 100%;
+        background-color: white;
+    }
+    
+/* Table */
+
+    table {
+        font-size: 0.6rem;
+    }
+
+    th {
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    td {
+        text-align: center;
+        vertical-align: middle;
+        word-break: break-all; 
+    }
+
+    div.dataTables_wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .table-buttons {
+        min-width: 40px;
+    }
+    
+    .table-molecule {
+        min-width: 100px;
+    }
+    
+    .table-structure {
+        min-width: 150px;
+    }
+    
+    .dataTables_filter {
+        margin-top: 10px;
+    }
+    
+/* Buttons */
+
+    .display-options {
+        margin-top: 12px;
+    }
+    
+    .display-btn {
+        background-color: #70a5ff;
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px 8px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .show-hide-button {
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 0.6rem;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .hide {
+        background-color: #55a672; /* Green to indicate molecule is currently shown */
+    }
+    
+    .show {
+        background-color: #ff5e4d; /* Red to indicate molecule is currently hidden */
+    }
+    
+    .dt-buttons {
+        display: inline;
+    }
+    
+    .dt-button {
+        background-color: #55a672;
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 12px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .dt-button.show-all {
+        background-color: #ff5e4d;
+    }
+        
