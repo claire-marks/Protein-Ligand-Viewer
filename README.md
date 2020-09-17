@@ -12,7 +12,7 @@ It uses PV viewer to display the structures, and shows a table containing the de
 
 All requirements are given in the requirements.txt file. A conda environment can be created using:
 
-`conda create --name <envname> --file requirements.txt`
+`conda create --name <envname> --file requirements.txt -c rdkit`
 
 
 ### Using the viewer
