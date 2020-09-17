@@ -5,9 +5,9 @@
         
         <!--scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	    <script type='text/javascript' src="{{ url_for('static', filename = 'js/bio-pv.min.js') }}"></script>
-	    <script type='text/javascript' src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-	    <script type='text/javascript' src="https://cdn.datatables.net/buttons/1.6.3/js/dataTables.buttons.min.js"></script>
+	    <script type="text/javascript" src="{{ url_for('static', filename = 'js/bio-pv.min.js') }}"></script>
+	    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.3/js/dataTables.buttons.min.js"></script>
 	    
 	    <!--styling-->
 	    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
@@ -113,7 +113,7 @@
                                     <td>
                                         <!--hs_total-->
                                         {% if "hs_total" in ligandData[l] %}
-                                            {{ '%.3f' % ligandData[l]["hs_total"] }}
+                                            {{ "%.3f" % ligandData[l]["hs_total"] }}
                                         {% else %}
                                         {% endif %}
                                     </td>
@@ -208,25 +208,25 @@
     
     // Functions to change representation of protein structure (cartoon, ball and stick, or spheres)
     function asCartoon() {
-        viewer.rm('protein');
-        viewer.cartoon('protein', proteinObj, { color: pv.color.uniform("#70a5ff") });
+        viewer.rm("protein");
+        viewer.cartoon("protein", proteinObj, { color: pv.color.uniform("#70a5ff") });
         viewer.requestRedraw();
     }
     
     function asBallStick() {
-        viewer.rm('protein');
-        viewer.ballsAndSticks('protein', proteinObj, { color: pv.color.byElement() });
+        viewer.rm("protein");
+        viewer.ballsAndSticks("protein", proteinObj, { color: pv.color.byElement() });
         viewer.requestRedraw();
     }
     
     function asSpheres() {
-        viewer.rm('protein');
-        viewer.spheres('protein', proteinObj, { color: pv.color.byElement() });
+        viewer.rm("protein");
+        viewer.spheres("protein", proteinObj, { color: pv.color.byElement() });
         viewer.requestRedraw();
     }
     
     // If an atom in the viewer is clicked, show the chain/residue/atom (for the protein) or ligand name in the label div
-    viewer.addListener('click', function(picked) {
+    viewer.addListener("click", function(picked) {
         // If the user clicked in an empty area in the viewer, clear the label div
         if (picked === null) {
             labelElement.innerHTML = "";
@@ -245,7 +245,7 @@
     });
     
     // On a double click, reorientate the viewer such that the clicked atom is in the center
-    viewer.on('doubleClick', function(picked) {
+    viewer.on("doubleClick", function(picked) {
         if (picked === null) {
             viewer.fitTo(proteinObj);
             return;
@@ -273,7 +273,7 @@
     }
     
     // Load structures once the rest of the web page is loaded
-    document.addEventListener('DOMContentLoaded', loadStructure);
+    document.addEventListener("DOMContentLoaded", loadStructure);
     
 </script>
 
@@ -282,13 +282,13 @@
 <script>
     
     $(document).ready( function () {
-        $('#ligand-table').DataTable( {
+        $("#ligand-table").DataTable( {
             "paging":   false,      // don't split the table into separate pages
-            "order": [[1, 'asc']],  // originally order the ligands by their name
+            "order": [[1, "asc"]],  // originally order the ligands by their name
             "info":     false,
             "scrollY": 400,
             "scrollX": true,
-            "dom": '<<t>Bf>',       // set positions of buttons + search bar
+            "dom": "<<t>Bf>",       // set positions of buttons + search bar
             columnDefs:[{"orderable": false, "targets": [0,2]},  //remove option to order by button/structure columns
                         {targets:[0], class:"table-buttons"},    //show/hide buttons
                         {targets:[1], class:"table-molecule"},   //molecule name class
@@ -297,8 +297,8 @@
             // custom buttons - show/hide all
             buttons: [
                 {
-                    text: 'hide all',
-                    className: 'hide-all',
+                    text: "hide all",
+                    className: "hide-all",
                     action: function ( e, dt, node, config ) {
                         // iterate over all ligands, hide + alter toggle buttons to say 'show'
                         var i;
@@ -314,8 +314,8 @@
                     }
                 },
                 {
-                    text: 'show all',
-                    className: 'show-all',
+                    text: "show all",
+                    className: "show-all",
                     action: function ( e, dt, node, config ) {
                         // iterate over all ligands, show + alter toggle buttons to say 'hide'
                         var i;

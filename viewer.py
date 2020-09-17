@@ -50,7 +50,7 @@ def load_ligands(ligandsFname):
 ##### ROUTES #####
 
 # Main page
-@app.route('/viewer/<structureId>/')
+@app.route("/viewer/<structureId>/")
 def viewer(structureId):
     # Work out file names from given structure name - assume <structureid>.pdb for protein and <structureid>_ligs.sdf for ligands
     proteinFname = structureId + ".pdb"
@@ -67,7 +67,7 @@ def viewer(structureId):
 	
     ligandData = load_ligands(ligandsFname)
 	
-    return render_template('index.html', 
+    return render_template("index.html", 
                            errmsg=errmsg,
                            structureId=structureId, 
                            proteinFname=proteinFname, 
@@ -75,7 +75,7 @@ def viewer(structureId):
                            ligandData=ligandData)
 
 # route to fetch files from the structure directory
-@app.route('/structurefiles/<fname>/')
+@app.route("/structurefiles/<fname>/")
 def get_structure_file(fname):
 
 	return send_from_directory(STRUCTURE_DIRECTORY, fname)
@@ -83,4 +83,4 @@ def get_structure_file(fname):
     
 ##### MAIN #####
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='5000')
+    app.run(host="0.0.0.0",port="5000")
